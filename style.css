@@ -8,5 +8,9 @@ body {
 
 th,
 td {
-    @apply border border-white text-center text-sm;
+    @apply border border-white text-white text-center text-sm;
+}
+
+.active {
+    @apply font-bold bg-rose-500;
 }
