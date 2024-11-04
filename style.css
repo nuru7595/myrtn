@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-slate-700 text-white;
+}
+
+th,
+td {
+    @apply border border-white text-center text-sm;
+}
