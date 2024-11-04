@@ -27,6 +27,7 @@ function myFunc() {
     const now = new Date();
     const currentHour = now.getHours();
     const currentMinutes = now.getMinutes();
+    let activeRow = null;
     rows.forEach(row => {
         const startTime = row.getAttribute('data-start').split(':');
         const startHour = parseInt(startTime[0]);
@@ -56,10 +57,16 @@ function myFunc() {
 
         if (isWithinTimeRange) {
             row.classList.add('active');
+            activeRow = row;
         } else {
             row.classList.remove('active');
         }
     });
+
+    // Scroll to the active row if it exists
+    if (activeRow) {
+        activeRow.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
 }
 
 // Call the function initially and set it to update every minute
