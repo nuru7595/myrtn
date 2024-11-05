@@ -67,6 +67,42 @@ function myFunc() {
     if (activeRow) {
         activeRow.scrollIntoView({ behavior: "smooth", block: "center" });
     }
+
+    // Review Dates;
+    function getPreviousDates() {
+        const currentDate = new Date();
+    
+        // 1 day before the current date
+        const oneDayBefore = new Date(currentDate);
+        oneDayBefore.setDate(currentDate.getDate() - 1);
+    
+        // 2 days before the current date
+        const twoDaysBefore = new Date(currentDate);
+        twoDaysBefore.setDate(currentDate.getDate() - 2);
+    
+        // 1 week before the current date
+        const oneWeekBefore = new Date(currentDate);
+        oneWeekBefore.setDate(currentDate.getDate() - 7);
+    
+        // 2 weeks before the current date
+        const twoWeeksBefore = new Date(currentDate);
+        twoWeeksBefore.setDate(currentDate.getDate() - 14);
+    
+        return {
+            currentDate,
+            oneDayBefore,
+            twoDaysBefore,
+            oneWeekBefore,
+            twoWeeksBefore
+        };
+    }
+    
+    // Test the function
+    const dates = getPreviousDates();
+    const preDates = `${dates.twoWeeksBefore.getDate()}, ${dates.oneWeekBefore.getDate()}, ${dates.twoDaysBefore.getDate()}, ${dates.oneDayBefore.getDate()} Review`;
+    document.querySelectorAll(".preDate").forEach(x => {
+        x.innerText = preDates;
+    });
 }
 
 // Call the function initially and set it to update every minute
