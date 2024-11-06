@@ -14,3 +14,7 @@ td {
 .active {
     @apply font-bold bg-rose-500;
 }
+
+button {
+    @apply w-full cursor-pointer;
+}

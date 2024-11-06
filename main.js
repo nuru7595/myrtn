@@ -1,4 +1,5 @@
-const rows = document.querySelectorAll("#table tr");
+const rows = document.querySelectorAll(".tr");
+let i = 1;
 rows.forEach(row => {
     let td = row.querySelector("td");
     let tdEnd = row.querySelectorAll("td")[1];
@@ -21,6 +22,8 @@ rows.forEach(row => {
     }
     row.setAttribute("data-start", `${h}:${m}`);
     row.setAttribute("data-end", `${hEnd}:${mEnd}`);
+    row.setAttribute("data-task-id", i);
+    i++;
 })
 
 function myFunc() {
@@ -71,32 +74,31 @@ function myFunc() {
     // Review Dates;
     function getPreviousDates() {
         const currentDate = new Date();
-    
+
         // 1 day before the current date
         const oneDayBefore = new Date(currentDate);
         oneDayBefore.setDate(currentDate.getDate() - 1);
-    
+
         // 2 days before the current date
         const twoDaysBefore = new Date(currentDate);
         twoDaysBefore.setDate(currentDate.getDate() - 2);
-    
+
         // 1 week before the current date
         const oneWeekBefore = new Date(currentDate);
         oneWeekBefore.setDate(currentDate.getDate() - 7);
-    
+
         // 2 weeks before the current date
         const twoWeeksBefore = new Date(currentDate);
         twoWeeksBefore.setDate(currentDate.getDate() - 14);
-    
+
         return {
-            currentDate,
             oneDayBefore,
             twoDaysBefore,
             oneWeekBefore,
             twoWeeksBefore
         };
     }
-    
+
     // Test the function
     const dates = getPreviousDates();
     const preDates = `${dates.twoWeeksBefore.getDate()}, ${dates.oneWeekBefore.getDate()}, ${dates.twoDaysBefore.getDate()}, ${dates.oneDayBefore.getDate()} Review`;
@@ -108,3 +110,56 @@ function myFunc() {
 // Call the function initially and set it to update every minute
 myFunc();
 setInterval(myFunc, 60000);
+
+// New Update
+// Helper function to get today's date as a unique key
+function getTodayKey() {
+    const today = new Date();
+    return today.toISOString().split('T')[0]; // Format: "YYYY-MM-DD"
+}
+
+// Function to mark a task as done
+function markAsDone(button) {
+    const row = button.closest('tr');
+    const taskId = row.getAttribute('data-task-id');
+    const todayKey = getTodayKey();
+
+    // Retrieve the done tasks for today from localStorage
+    let doneTasks = JSON.parse(localStorage.getItem(todayKey)) || [];
+
+    // Mark the current task as done
+    if (!doneTasks.includes(taskId)) {
+        doneTasks.push(taskId);
+        localStorage.setItem(todayKey, JSON.stringify(doneTasks));
+    }
+
+    // Update the row visually
+    button.disabled = true;
+    button.innerHTML = '-<i class="ri-heart-3-fill text-white"></i>-';
+}
+
+// Function to load the done tasks status from localStorage
+function loadTasks() {
+    const todayKey = getTodayKey();
+    const doneTasks = JSON.parse(localStorage.getItem(todayKey)) || [];
+
+    // Loop through each row and set its status if it was marked as done
+    document.querySelectorAll('#table tr[data-task-id]').forEach(row => {
+        const taskId = row.getAttribute('data-task-id');
+        const button = row.querySelector('button');
+
+        if (doneTasks.includes(taskId)) {
+            button.disabled = true;
+            button.innerHTML = '-<i class="ri-heart-3-fill text-white"></i>-';
+        }
+    });
+}
+
+function resetTasks() {
+    const todayKey = getTodayKey();
+    localStorage.removeItem(todayKey); // Clear today's tasks
+    location.reload(); // Reload the page to reflect changes
+}
+
+// Load tasks status on page load
+window.onload = loadTasks;

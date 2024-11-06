@@ -64,190 +64,220 @@
             <table class="border border-white w-full">
                 <thead>
                     <tr class="bg-black">
-                        <th colspan="5" class="font-bold text-lg md:text-2xl">Daily Routine</th>
+                        <th colspan="6" class="font-bold text-lg md:text-2xl">Daily Routine</th>
                     </tr>
                     <tr class="bg-black">
                         <th colspan="2">Time</th>
                         <th>Activities</th>
                         <th>Description</th>
                         <th>Time Span</th>
+                        <th class="hidden md:block">Status</th>
                     </tr>
                 </thead>
                 <tbody id="table">
-                    <tr>
+                    <tr class="tr">
                         <td>08:00 Pm</td>
                         <td>03:30 Am</td>
                         <td>Sleep</td>
                         <td>-<i class="ri-heart-3-fill text-white"></i>-</td>
                         <td>7:30m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr>
+                    <tr class="tr">
                         <td>03:30 Am</td>
                         <td>03:50 Am</td>
                         <td>Freshen Up</td>
                         <td>Washroom, Brush, Oju</td>
                         <td>20m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-green-600">
+                    <tr class="bg-green-600 tr">
                         <td>03:50 Am</td>
                         <td>04:05 Am</td>
                         <td>Tahajjud</td>
                         <td>2/4 Rakat</td>
                         <td>15m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-indigo-500">
+                    <tr class="bg-indigo-500 tr">
                         <td>04:05 Am</td>
                         <td>05:35 Am</td>
                         <td>Bangla</td>
                         <td class="preDate"></td>
                         <td>01:30m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-green-600">
+                    <tr class="bg-green-600 tr">
                         <td>05:35 Am</td>
                         <td>05:45 Am</td>
                         <td>Prayer</td>
                         <td>Fojor</td>
                         <td>10m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-green-600">
+                    <tr class="bg-green-600 tr">
                         <td>05:45 Am</td>
                         <td>06:15 Am</td>
                         <td>Quran</td>
                         <td>Recitation</td>
                         <td>30m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr>
+                    <tr class="tr">
                         <td>06:15 Am</td>
                         <td>06:30 Am</td>
                         <td>Break</td>
                         <td>Fresh & Hydrate</td>
                         <td>15m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-indigo-500">
+                    <tr class="bg-indigo-500 tr">
                         <td>06:30 Am</td>
                         <td>08:00 Am</td>
                         <td>English</td>
                         <td class="preDate"></td>
                         <td>01:30m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr>
+                    <tr class="tr">
                         <td>08:00 Am</td>
                         <td>08:20 Am</td>
                         <td>Break</td>
                         <td>Breakfast</td>
                         <td>20m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-indigo-500">
+                    <tr class="bg-indigo-500 tr">
                         <td>08:20 Am</td>
                         <td>09:50 Am</td>
                         <td>GK</td>
                         <td class="preDate"></td>
                         <td>01:30m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr>
+                    <tr class="tr">
                         <td>09:50 Am</td>
                         <td>10:05 Am</td>
                         <td>Break</td>
                         <td>Stretch & Walk</td>
                         <td>15m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-blue-500">
+                    <tr class="bg-blue-500 tr">
                         <td>10:05 Am</td>
                         <td>11:35 Am</td>
                         <td>Bangla</td>
                         <td>New Study</td>
                         <td>01:30m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-violet-500">
+                    <tr class="bg-violet-500 tr">
                         <td>11:35 Am</td>
                         <td>11:50 Am</td>
                         <td>Bangla</td>
                         <td>Review</td>
                         <td>15m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr>
+                    <tr class="tr">
                         <td>11:50 Am</td>
                         <td>12:10 Pm</td>
                         <td>Break</td>
                         <td>Lunch</td>
                         <td>20m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-blue-500">
+                    <tr class="bg-blue-500 tr">
                         <td>12:10 Pm</td>
                         <td>01:40 Pm</td>
                         <td>English</td>
                         <td>New Study</td>
                         <td>01:30m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-violet-500">
+                    <tr class="bg-violet-500 tr">
                         <td>01:40 Pm</td>
                         <td>01:55 Pm</td>
                         <td>English</td>
                         <td>Review</td>
                         <td>15m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-green-600">
+                    <tr class="bg-green-600 tr">
                         <td>01:55 Pm</td>
                         <td>02:10 Pm</td>
                         <td>Prayer</td>
                         <td>Johor</td>
                         <td>15m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-blue-500">
+                    <tr class="bg-blue-500 tr">
                         <td>02:10 Pm</td>
                         <td>03:40 Pm</td>
                         <td>GK</td>
                         <td>New Study</td>
                         <td>01:30m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-violet-500">
+                    <tr class="bg-violet-500 tr">
                         <td>03:40 Pm</td>
                         <td>03:55 Pm</td>
                         <td>GK</td>
                         <td>Review</td>
                         <td>15m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-green-600">
+                    <tr class="bg-green-600 tr">
                         <td>03:55 Pm</td>
                         <td>04:10 Pm</td>
                         <td>Prayer</td>
                         <td>Asor</td>
                         <td>15m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr>
+                    <tr class="tr">
                         <td>04:10 Pm</td>
                         <td>05:00 Pm</td>
                         <td>Exercise</td>
                         <td>Heavy</td>
                         <td>50m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr>
+                    <tr class="tr">
                         <td>05:00 Pm</td>
                         <td>05:30 Pm</td>
                         <td>Break</td>
                         <td>Bath & Rest Outside</td>
                         <td>30m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-green-600">
+                    <tr class="bg-green-600 tr">
                         <td>05:30 Pm</td>
                         <td>05:45 Pm</td>
                         <td>Prayer</td>
                         <td>Magreeb</td>
                         <td>15m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr>
+                    <tr class="tr">
                         <td>05:45 Pm</td>
                         <td>06:05 Pm</td>
                         <td>Break</td>
                         <td>Dinner</td>
                         <td>20m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
                     </tr>
-                    <tr class="bg-violet-500">
+                    <tr class="bg-violet-500 tr">
                         <td>06:05 Pm</td>
                         <td>07:35 Pm</td>
                         <td>All New</td>
                         <td>Revision</td>
                         <td>01:30m</td>
+                        <td class="hidden md:block"><button onclick="markAsDone(this)">Done</button></td>
+                    </tr>
+                    <tr class="bg-black">
+                        <td class="text-sm py-2" colspan="5">Digital Screen should be avoid from now for a Quality Sleep!</td>
+                        <td class="hidden md:block"><button onclick="resetTasks()">Reset</button></td>
                     </tr>
                     <tr class="bg-green-600">
                         <td>07:35 Pm</td>
@@ -255,6 +285,7 @@
                         <td>Prayer</td>
                         <td>Esha</td>
                         <td>15m</td>
+                        <td class="hidden md:block">-<i class="ri-heart-3-fill text-white"></i>-</td>
                     </tr>
                     <tr>
                         <td>07:50 Pm</td>
@@ -262,6 +293,7 @@
                         <td>Break</td>
                         <td>Prepare for Bed</td>
                         <td>10m</td>
+                        <td class="hidden md:block">-<i class="ri-heart-3-fill text-white"></i>-</td>
                     </tr>
                 </tbody>
             </table>
