@@ -2,26 +2,16 @@ const rows = document.querySelectorAll(".tr");
 let i = 1;
 rows.forEach(row => {
     let td = row.querySelector("td");
-    let tdEnd = row.querySelectorAll("td")[1];
     let h = Number(td.innerText.slice(0, 2));
-    let hEnd = Number(tdEnd.innerText.slice(0, 2));
     let m = Number(td.innerText.slice(3, 5));
-    let mEnd = Number(tdEnd.innerText.slice(3, 5));
     let ap = td.innerText.slice(6, 7);
-    let apEnd = tdEnd.innerText.slice(6, 7);
     //
     if (ap == "P") {
         if (h < 12) {
             h += 12;
         }
     }
-    if (apEnd == "P") {
-        if (hEnd < 12) {
-            hEnd += 12;
-        }
-    }
     row.setAttribute("data-start", `${h}:${m}`);
-    row.setAttribute("data-end", `${hEnd}:${mEnd}`);
     row.setAttribute("data-task-id", i);
     i++;
 })
@@ -105,6 +95,42 @@ function myFunc() {
     document.querySelectorAll(".preDate").forEach(x => {
         x.innerText = preDates;
     });
+
+    // Left;
+    // Function to parse time in "HH:MM AM/PM" format to a Date object
+    function parseTime(timeString) {
+        const [time, modifier] = timeString.split(" ");
+        let [hours, minutes] = time.split(":").map(Number);
+        if (modifier === "PM" && hours < 12) hours += 12;
+        if (modifier === "AM" && hours === 12) hours = 0;
+        const now = new Date();
+        return new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes);
+    }
+
+    // Countdown function
+    function updateCountdowns() {
+        for(const row of rows){
+            const endTime = parseTime(row.getAttribute("data-end"));
+            const now = new Date();
+            const diff = endTime - now;
+
+            if (diff > 0) {
+                const hours = Math.floor((diff % 86400000) / 3600000);
+                const minutes = Math.floor((diff % 3600000) / 60000);
+                if (hours > 0) {
+                    row.querySelectorAll("td")[4].textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}m`;
+                } else {
+                    row.querySelectorAll("td")[4].textContent = `${minutes.toString().padStart(2, '0')}m`;
+                }
+                if (row.classList.contains("active")) {
+                    return;
+                }
+            } else {
+                row.querySelectorAll("td")[4].innerHTML = "-<i class='ri-heart-3-fill text-white'></i>-";
+            }
+        };
+    }
+    updateCountdowns();
 }
 
 // Call the function initially and set it to update every minute
