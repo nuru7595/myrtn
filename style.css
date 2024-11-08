@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Itim&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-    @apply bg-slate-700 text-white;
+    @apply bg-slate-700 text-white font-itim;
 }
 
 th,
 td {
-    @apply border border-white text-white text-center text-sm lg:text-lg p-1;
+    @apply border border-white text-white text-center text-xs sm:text-sm lg:text-lg px-1 py-2;
 }
 
 .active {
