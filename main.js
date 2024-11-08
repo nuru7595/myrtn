@@ -109,7 +109,7 @@ function myFunc() {
 
     // Countdown function
     function updateCountdowns() {
-        for(const row of rows){
+        for (const row of rows) {
             const endTime = parseTime(row.getAttribute("data-end"));
             const now = new Date();
             const diff = endTime - now;
@@ -179,12 +179,17 @@ function loadTasks() {
             button.innerHTML = '-<i class="ri-heart-3-fill text-white"></i>-';
         }
     });
+    // Remove all keys except the current date
+    Object.keys(localStorage).forEach(key => {
+        if (key !== todayKey) {
+            localStorage.removeItem(key);
+        }
+    });
 }
 
 function resetTasks() {
-    const todayKey = getTodayKey();
-    localStorage.removeItem(todayKey); // Clear today's tasks
-    location.reload(); // Reload the page to reflect changes
+    localStorage.clear();
+    location.reload();
 }
 
 // Load tasks status on page load
