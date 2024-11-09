@@ -10,13 +10,18 @@ body {
 
 th,
 td {
-    @apply border border-white text-white text-center text-xs sm:text-sm lg:text-lg px-1 py-2;
+    @apply border border-white text-white text-center text-xs sm:text-sm lg:text-lg;
+}
+
+section th,
+section td {
+    @apply px-1 py-2;
 }
 
 .active {
-    @apply font-bold bg-rose-500;
+    @apply font-bold bg-rose-700;
 }
 
 button {
-    @apply w-full cursor-pointer;
+    @apply w-full cursor-pointer text-sm;
 }
