@@ -18,10 +18,6 @@ section td {
     @apply px-1 py-2;
 }
 
-.active td{
-    @apply font-bold border-y-4 border-amber-300;
-}
-
-button {
-    @apply w-full cursor-pointer text-sm md:text-base;
+.active td:first-child{
+    @apply font-bold bg-violet-600;
 }
