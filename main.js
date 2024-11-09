@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const addDoneButton = (row, index) => {
         const button = document.createElement("button");
-        if (index >= totalRows - 2) {
+        if (index >= totalRows - 1) {
             button.innerHTML = "<i class='ri-heart-3-fill'></i>";
             button.disabled = true;
         } else {

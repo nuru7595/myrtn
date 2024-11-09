@@ -5,12 +5,12 @@
 @tailwind utilities;
 
 body {
-    @apply bg-slate-700 text-white font-itim;
+    @apply bg-slate-800 text-white font-itim;
 }
 
 th,
 td {
-    @apply border border-white text-white text-center text-xs sm:text-sm lg:text-lg;
+    @apply border border-white text-white text-center text-sm lg:text-lg;
 }
 
 section th,
@@ -18,10 +18,10 @@ section td {
     @apply px-1 py-2;
 }
 
-.active {
-    @apply font-bold bg-rose-700;
+.active td{
+    @apply font-bold border-y-4 border-amber-300;
 }
 
 button {
-    @apply w-full cursor-pointer text-sm;
+    @apply w-full cursor-pointer text-sm md:text-base;
 }
