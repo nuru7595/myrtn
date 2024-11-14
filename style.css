@@ -18,6 +18,8 @@ section td {
     @apply px-1 py-2;
 }
 
-.active td:first-child{
+.active td:first-child,
+.active td:nth-child(3),
+.active td:last-child{
     @apply font-bold bg-violet-600;
 }
