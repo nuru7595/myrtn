@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const startMinutes = startHour * 60 + startMin;
         const endMinutes = (endHour < startHour ? endHour + 24 : endHour) * 60 + endMin;
         const duration = endMinutes - startMinutes;
-        row.querySelector("td:nth-child(3)").innerText = 
+        row.querySelector("td:nth-child(3)").innerText =
             duration >= 60 ? `${Math.floor(duration / 60)}h ${duration % 60}m` : `${duration}m`;
 
         const updateRemainingTime = () => {
@@ -26,11 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
             let remainingMinutes = endMinutes - currentMinutes;
             if (remainingMinutes < 0) {
                 remainingMinutes += 24 * 60;
+            } else if (remainingMinutes >= 24 * 60) {
+                remainingMinutes %= 24 * 60;
             }
-            row.querySelector("td:nth-child(4)").innerText = 
-                remainingMinutes > 0 ? 
-                (remainingMinutes >= 60 ? `${Math.floor(remainingMinutes / 60)}h ${remainingMinutes % 60}m` : `${remainingMinutes}m`) 
-                : "0m";
+            row.querySelector("td:nth-child(4)").innerText =
+                remainingMinutes > 0 ?
+                    (remainingMinutes >= 60 ? `${Math.floor(remainingMinutes / 60)}h ${remainingMinutes % 60}m` : `${remainingMinutes}m`)
+                    : "0m";
             const nowHours = now.getHours();
             const nowMinutes = now.getMinutes();
             const afterStart = (nowHours > startHour) || (nowHours === startHour && nowMinutes >= startMin);
