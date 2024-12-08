@@ -7,10 +7,10 @@ export default function Python() {
                     <span>1</span> From Magreeb to Esha.
                 </p>
                 <p>
-                    <span>2</span> Alternative of React Js.
+                    <span>2</span> An Alternative To React Js.
                 </p>
                 <p>
-                    <span>3</span> Even Days Only.
+                    <span>3</span> Only On Even Days.
                 </p>
             </div>
             <h3>

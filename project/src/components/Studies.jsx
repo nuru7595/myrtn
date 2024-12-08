@@ -4,16 +4,16 @@ export default function Prayers() {
             <h3>Admission Study</h3>
             <div>
                 <p>
-                    <span>1</span> The Most Prioritised Part of the Day.
+                    <span>1</span> The Highest Priority Part of the Day.
                 </p>
                 <p>
-                    <span>2</span> Maximum Time Should Be Given.
+                    <span>2</span> The Maximum Time Should Be Given.
                 </p>
                 <p>
-                    <span>3</span> Revise Preveous Studies.
+                    <span>3</span> Revise The Previous Studies.
                 </p>
                 <p>
-                    <span>4</span> Read New.
+                    <span>4</span> Read Something New.
                 </p>
             </div>
             <h3>

@@ -4,10 +4,10 @@ export default function Prayers() {
             <h3>Prayer & Quran</h3>
             <div>
                 <p>
-                    <span>1</span> Pray All Prayers.
+                    <span>1</span> Pray All the Prayers.
                 </p>
                 <p>
-                    <span>2</span> Study Minimum 30 Minutes.
+                    <span>2</span> Study For At Least 30 Minutes.
                 </p>
             </div>
             <h3>

@@ -7,10 +7,10 @@ export default function React() {
                     <span>1</span> From Magreeb to Esha.
                 </p>
                 <p>
-                    <span>2</span> Alternative of Python.
+                    <span>2</span> An Alternative To Python.
                 </p>
                 <p>
-                    <span>3</span> Odd Days Only.
+                    <span>3</span> Only On Odd Days.
                 </p>
             </div>
             <h3>
