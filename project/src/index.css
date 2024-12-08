@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply text-white bg-bg;
+}
+
+section {
+    @apply bg-fg rounded-xl my-6;
+}
+
+section > div {
+    @apply border-y-4 border-bg py-2 px-4;
+}
+
+h3 {
+    @apply font-bold text-center text-lg py-2;
+}
+
+p {
+    @apply py-2;
+}
+
+span {
+    @apply rounded-full bg-bg px-2 py-1;
+}
