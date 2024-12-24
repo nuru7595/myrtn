@@ -13,7 +13,9 @@ export default function HomeWork() {
                     <span>3</span> Study
                 </p>
             </div>
-            <h3>Alhamdulillah</h3>
+            <h3>
+                Rise Like the <span>Morning Bird</span>, Begin with <span>Allah's Name</span>
+            </h3>
         </section>
     );
 }
